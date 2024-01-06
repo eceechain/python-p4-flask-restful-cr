@@ -59,11 +59,11 @@ def post(self):
     db.session.add(new_record)
     db.session.commit()
 
-    response_dict = new_record.to()
+    response_dict = new_record.to_dict()
 
     response = make_response(
         jsonify(response_dict),
-        210
+        201
     )
 
     return  response
